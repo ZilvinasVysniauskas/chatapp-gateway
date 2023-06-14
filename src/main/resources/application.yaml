@@ -1,0 +1,36 @@
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: user_service
+          uri: lb://chatapp-user-service
+          predicates:
+            - Path=/api/users/**
+    oauth2:
+      client:
+        registration:
+          google:
+            client-secret: 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
+            client-id: 162108664997-bqpapm5nn8a35nndm3d4g17s9lf8mk9j.apps.googleusercontent.com
+  data:
+    mongodb:
+      uri: mongodb+srv://test_user:Test123@cluster0.cfmd8.mongodb.net/chat_app_db
+
+app:
+  tokenSecret: TFVpbWQ3UHZXS0ZWa3FHNEF0dVpkU2t6SE1qQlN1Nk5YZmVCQk9NNzk1RzZWa3NMdTdna3U3WlhnRDU3cVJ1cA\=\=
+
+amazon:
+  s3:
+    secretKey: 8HXHTx8mUmFGKPW4fF5/bEHa9t1APW+dBXQtlv8OX
+    accessKey: AKIATRWDS2WY6NWHEWEM
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

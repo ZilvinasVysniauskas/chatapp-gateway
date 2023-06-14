@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  chatapp-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chatapp-gateway
+  template:
+    metadata:
+      labels:
+        app: chatapp-gateway
+    spec:
+      containers:
+        - name: chatapp-gateway
+          image:  zilvinas0147/chatapp-gateway:v1.1.0
+          ports:
+            - containerPort: 8081gi
