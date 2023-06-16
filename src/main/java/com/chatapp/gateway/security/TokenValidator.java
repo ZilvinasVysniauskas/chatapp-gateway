@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.util.Arrays;
 import java.util.Base64;
 
 @Slf4j
@@ -35,15 +36,15 @@ public class TokenValidator {
                     .parseClaimsJws(authToken);
             return true;
         } catch (SignatureException  ex) {
-            log.error("Invalid JWT signature");
+            log.error("Invalid JWT signature" + " " + ex.getMessage());
         } catch (MalformedJwtException ex) {
-            log.error("Invalid JWT token");
+            log.error("Invalid JWT token" + " " + ex.getMessage());
         } catch (ExpiredJwtException ex) {
-            log.error("Expired JWT token");
+            log.error("Expired JWT token" + " " + ex.getMessage());
         } catch (UnsupportedJwtException ex) {
-            log.error("Unsupported JWT token");
+            log.error("Unsupported JWT token" + " " + ex.getMessage());
         } catch (IllegalArgumentException ex) {
-            log.error("JWT claims string is empty.");
+            log.error("JWT claims secret is empty." + " " + ex.getMessage());
         }
         return false;
     }

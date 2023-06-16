@@ -19,7 +19,7 @@ spring:
       uri: mongodb+srv://test_user:Test123@cluster0.cfmd8.mongodb.net/chat_app_db
 
 app:
-  tokenSecret: TFVpbWQ3UHZXS0ZWa3FHNEF0dVpkU2t6SE1qQlN1Nk5YZmVCQk9NNzk1RzZWa3NMdTdna3U3WlhnRDU3cVJ1cA\=\=
+  tokenSecret: "SlhncUhoS29kVkFaT2lnQkNVWURwQmFVdTVXS2JTSFRDVWJ6a2c9PXJaL1BvNHF0dHQvaTBYSXRLS2Mxb3Fnbg=="
 
 amazon:
   s3:
