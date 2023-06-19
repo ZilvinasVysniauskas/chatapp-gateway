@@ -3,6 +3,9 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      kubernetes:
+        discovery:
+          namespace: chatapp-namespace
       routes:
         - id: user_service
           uri: lb://chatapp-user-service
@@ -34,3 +37,9 @@ logging:
     org:
       springframework:
         security: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'beans'

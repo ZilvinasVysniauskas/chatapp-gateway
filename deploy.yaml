@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: chatapp-gateway
-          image:  zilvinas0147/chatapp-gateway:v1.5.1
+          image:  zilvinas0147/chatapp-gateway:v1.5.3
           ports:
             - containerPort: 8081
