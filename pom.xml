@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.chatapp</groupId>
 	<artifactId>chatapp-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.6.0</version>
 	<name>gateway</name>
 	<description>server for chat room endpoints</description>
 	<properties>
@@ -90,6 +90,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>zilvinas0147/${project.artifactId}:${project.version}</name>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -8,7 +8,7 @@ spring:
           namespace: chatapp-namespace
       routes:
         - id: user_service
-          uri: lb://chatapp-user-service
+          uri: lb://chatapp-user-serviceAAAAAAAAAAAAAAAAA
           predicates:
             - Path=/api/users/**
     oauth2:
@@ -37,6 +37,9 @@ logging:
     org:
       springframework:
         security: DEBUG
+        cloud:
+          gateway: TRACE
+          loadbalancer: TRACE
 
 management:
   endpoints:
